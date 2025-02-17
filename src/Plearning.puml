@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+
+actor Profesor
+actor Alumne
+
+
+rectangle " Plataforma d'E-learning" {
+   Profesor --> ( crear cursos)
+   Profesor --> (gestionar continguts)
+
+   Alumne --> (Validar pagament)
+   (Validar pagament) ..> (inscriure a un curs): << Include >>
+
+
+
+
+}
+@enduml

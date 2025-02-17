@@ -1,0 +1,14 @@
+@startuml
+left to right direction
+
+actor Bibliotecari
+actor Usuari
+
+rectangle "Sistema de Gestió d'Una Biblioteca" {
+   Usuari --> (Buscar llibre)
+   Usuari --> (Demanar préstec)
+   Bibliotecari --> (Registrar nou llibre)
+   Bibliotecari --> (Gestionar préstecs)
+   Bibliotecari --> Usuari: Notificar retard
+}
+@enduml

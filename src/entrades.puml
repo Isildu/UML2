@@ -1,0 +1,18 @@
+@startuml
+left to right direction
+
+actor Administrador
+actor Usuari
+actor Usuari_Registrat
+
+rectangle "Sistema de Venda d'Entrades" {
+   Usuari --> (cercar esdeveniments)
+   Usuari --> (comprar entrades)
+   Usuari_Registrat  --> (cercar esdeveniments)
+   Usuari_Registrat  --> (comprar entrades)
+   Usuari_Registrat  --> (veure historial de compres)
+   Usuari_Registrat  --> (cancel·lar entrades)
+   Administrador --> (nous esdeveniments)
+   Administrador --> (Gestionar vendes)
+}
+@enduml

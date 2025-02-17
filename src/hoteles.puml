@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+
+actor Client
+actor Administrador
+
+
+rectangle " Sistema de Reserva d'Hotels" {
+   Client --> (Cercar hotel)
+   Client --> (fer reserva)
+   Client <-- (Recordatori reserva)
+   Client --> (cancel·lar reserva)
+
+   Administrador --> (Gestionar les reserves)
+   Administrador --> (afegir nous hotels)
+
+
+
+}
+@enduml
