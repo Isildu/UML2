@@ -8,10 +8,15 @@ boundary "Interfície" as In
 control controlador as con
 entity entitat as en
 database plats as pl
+cli ->  In: Mostrar Plats
+In -> con: Mostrar Plats
+con -> en: Mostrar Plats
+en -> pl: Mostrar Plats
 pl -> en: Mostrar Plats
 en -> con: Mostrar Plats
-con -> In: Mostrar Comandes Pendents
+con -> In: Mostrar Plats
 
+In -> con: seleccionar plats i dorar a ok
 @enduml
 
 @startuml
@@ -21,4 +26,20 @@ database Comandes as com
 cui -> In: Veure Comandes Pendents
 In -> com: Veure comandes pendents
 com -> In: Mostrar Comandes Pendents
+@enduml
+
+@startuml
+actor Repartidor as Rep
+boundary "Interfície" as In
+control Comandes as com
+Rep -> In: Lliurar Comandes
+In -> com: Lliurar Comandes
+@enduml
+@startuml
+actor Repartidor as Rep
+boundary "Interfície" as In
+control controlador as con
+Rep -> In: notificar entrega
+In -> con: notificar entrega
+con -> In: notificada entrega
 @enduml
