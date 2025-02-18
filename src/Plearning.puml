@@ -9,8 +9,8 @@ rectangle " Plataforma d'E-learning" {
    Profesor --> ( crear cursos)
    Profesor --> (gestionar continguts)
 
-   Alumne --> (Validar pagament)
-   (Validar pagament) ..> (inscriure a un curs): << Include >>
+   Alumne --> (inscriure a un curs)
+   (inscriure a un curs) ..> (Validar pagament): << Include >>
 
 
 

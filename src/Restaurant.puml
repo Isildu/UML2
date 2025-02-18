@@ -6,13 +6,11 @@ actor Cuiners
 actor Repartidors
 
 rectangle "Sistema de Venda d'Entrades" {
-   Clients --> (seleccionar plats)
-   (seleccionar plats) --> (Fer pagament)
-   (Fer pagament) ..> ( comanda): << Include >>
-   (Fer pagament) ..> (Afegir propina): << Extend >>
-   (Afegir propina) ..> ( comanda): << Include >>
+   Clients --> (comanda)
+   (comanda) --> (Fer pagament)
+   (Fer pagament) ..> ( seleccionar plats): << Include >>
+   (Fer pagament) <.. (Afegir propina): << Extend >>
    Cuiners --> (veure comandes pendents)
-   ( comanda) --> (veure comandes pendents)
    Repartidors  --> ( lliurar comandes)
    Repartidors  --> (notificar entrega)
 }

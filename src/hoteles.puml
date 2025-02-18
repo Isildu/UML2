@@ -7,8 +7,8 @@ actor Administrador
 
 rectangle " Sistema de Reserva d'Hotels" {
    Client --> (Cercar hotel)
-   Client --> (fer reserva)
-   Client <-- (Recordatori reserva)
+   Client --> (fer compra)
+   (fer compra) <.. (Recordatori reserva)
    Client --> (cancel·lar reserva)
 
    Administrador --> (Gestionar les reserves)
