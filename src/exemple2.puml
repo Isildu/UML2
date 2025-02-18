@@ -1,0 +1,17 @@
+@startuml
+actor Usuari as Us
+boundary "Interfície" as In
+control "Controlador" as Cont
+entity "Factura" as F
+Us --> In: demanarFactura()
+activate In
+In --> Cont: demanarFactures()
+activate Cont
+loop mentreQuedinFactures
+    Cont --> F: getFactura(num)
+    activate F
+    F --> Cont: factura
+    deactivate F
+    end
+    Cont --> In: mostrarLlistaFactura
+@enduml

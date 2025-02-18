@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+actor Actor1  as AC
+boundary "InterficieGUI" as GUI
+control "Controlador1" as Control1
+entity "Entitat1" as En
+control "Gestor de Prestecs" as Prestec
+AC -> GUI : Seleccionar opcio del menu
+GUI -> Control1 : Cridar funcio de l'opcio
+Control1 -> En : Crear objectes de clase
+Control1 -> En : Crear objectes de clase
+create
+En -> Oblect1 : Crear objectes de clase
+
+
+
+
+@enduml

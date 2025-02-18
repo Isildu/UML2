@@ -1,0 +1,21 @@
+@startuml
+actor Usuari as Us
+boundary "Sistema de Biblioteca (Interfície)" as UI
+control "Controlador de Biblioteca" as Control
+entity "Base de Dades" as DB
+control "Gestor de Prestecs" as Prestec
+actor Bibliotecari as Bi
+Us -> UI : Seleccionar llibre per el prestec
+UI -> Control : Enviar solicitud de prestec
+Control -> Prestec : Validar Disponibilitat
+Prestec -> DB : Consultar estat del llibre
+DB --> Prestec : Retornar disponibilitat
+Prestec -> Bi : Sol·licitar aprovacio
+Bi -> Prestec : Aprovar/Rebutjar prestec
+Prestec -> DB : Actualitzar estat del prestec
+Prestec -> Control : Retornar estat
+Control -> UI : Mostrar resultat
+UI -> Us : Confirmar estat de la sol·licitud
+
+
+@enduml
