@@ -10,7 +10,7 @@ AC -> GUI : Seleccionar opcio del menu
 GUI -> Control1 : Cridar funcio de l'opcio
 Control1 -> En : Crear objectes de clase
 Control1 -> En : Crear objectes de clase
-create
+create v
 En -> Oblect1 : Crear objectes de clase
 
 
