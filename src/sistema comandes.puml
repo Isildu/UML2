@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor client as cli
+boundary "Interfície" as In
+control controlador as con
+entity entitat as en
+database plats as pl
+pl -> en: Mostrar Plats
+en -> con: Mostrar Plats
+con -> In: Mostrar Comandes Pendents
+
+@enduml
+
+@startuml
+actor Cuiner as cui
+boundary "Interfície" as In
+database Comandes as com
+cui -> In: Veure Comandes Pendents
+In -> com: Veure comandes pendents
+com -> In: Mostrar Comandes Pendents
+@enduml
